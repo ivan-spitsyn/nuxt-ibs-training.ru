@@ -1,8 +1,10 @@
-import md5 from 'crypto-js/md5'
+import CryptoJS from 'crypto-js'
+import {defineNuxtPlugin} from "nuxt/app";
+
 export default defineNuxtPlugin(() => {
     return {
         provide: {
-            md5Hash: (msg) => md5(msg),
+            md5Hash: (msg) => CryptoJS.MD5(msg),
         }
     }
 })

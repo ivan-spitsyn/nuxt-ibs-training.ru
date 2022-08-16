@@ -1,36 +1,3 @@
-<template>
-  <div class="news-cards">
-    <div class="news-cards__list">
-      <template v-for="(item, index) in items" :key="item.id">
-        <div :class="getItemClassByIndex(index)">
-          <div class="news-cards__item-view">
-            <div class="news-cards__item-image _type-1-1" :style="`background-image: url(${item.images['1-1']})`"></div>
-            <div class="news-cards__item-image _type-1-2" :style="`background-image: url(${item.images['1-2']})`"></div>
-            <div class="news-cards__item-image _type-2-1" :style="`background-image: url(${item.images['2-1']})`"></div>
-          </div>
-          <div class="news-cards__item-info">
-            <NuxtLink :to="item.link" class="news-cards__item-link"></NuxtLink>
-            <div class="news-cards__item-title">{{ item.title }}</div>
-            <div class="news-cards__item-description">{{ item.description }}</div>
-            <div class="news-cards__item-read-more">
-              <div class="button _white"><span>Подробнее</span></div>
-            </div>
-            <div class="news-cards__item-date">{{ item.date }}</div>
-          </div>
-        </div>
-      </template>
-      <div class="news-cards__item _type-1-1 _type-more">
-        <NuxtLink to="/blog/" class="news-cards__item-link"></NuxtLink>
-        <div class="news-cards__item-info">
-          <div class="news-cards__item-view-all">
-            Читать<br> <b>Блог</b>
-            <SvgIcon id="chevron-right" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
 <script>
 import SvgIcon from "~/components/SvgIcon";
 export default {
@@ -42,10 +9,47 @@ export default {
     }
   },
   methods: {
-    getItemClassByIndex: (index) => ['news-cards__item', index === 0 ? '_type-2-1' : index === 1 ? '_type-1-2' : '_type-1-1']
+    getItemClassByIndex: (index) => ['news-cards__item', index === 0 ? '_type-2-1' : index === 1 ? '_type-1-2' : '_type-1-1'],
+    getImageClassByIndex: (index) => ['news-cards__item-image', index === 0 ? '_type-2-1' : index === 1 ? '_type-1-2' : '_type-1-1'],
+    getImageTypeByIndex: (index) => index === 0 ? '2-1' : index === 1 ? '1-2' : '1-1',
   }
 }
 </script>
+<template>
+  <div class="news-cards">
+    <div class="news-cards__list">
+      <template v-for="(item, index) in items" :key="item.id">
+        <div :class="getItemClassByIndex(index)">
+          <div class="news-cards__item-view">
+            <nuxt-img format="webp"
+                      :class="getImageClassByIndex(index)"
+                      :src="item.images[getImageTypeByIndex(index)]"
+                      :alt="item.title"
+            />
+          </div>
+          <div class="news-cards__item-info">
+            <NuxtLink :to="item.link" class="news-cards__item-link" :aria-label="item.title"></NuxtLink>
+            <div class="news-cards__item-title">{{ item.title }}</div>
+            <div class="news-cards__item-description">{{ item.description }}</div>
+            <div class="news-cards__item-read-more">
+              <div class="button _white"><span>Подробнее</span></div>
+            </div>
+            <div class="news-cards__item-date">{{ item.date }}</div>
+          </div>
+        </div>
+      </template>
+      <div class="news-cards__item _type-1-1 _type-more">
+        <NuxtLink to="/blog/" class="news-cards__item-link" aria-label="Блог"></NuxtLink>
+        <div class="news-cards__item-info">
+          <div class="news-cards__item-view-all">
+            Читать<br> <b>Блог</b>
+            <SvgIcon id="chevron-right" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 <style lang="scss">
 
 .news-cards {

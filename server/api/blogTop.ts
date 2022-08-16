@@ -9,7 +9,7 @@ export default defineEventHandler(() => {
               '1-2': '/upload/blog-1_w.png',
               '1-1': '/upload/blog-1.png',
           },
-          'link': '/blog/Low-code-No-code-evolyutsiya-biznes-analitiki/',
+          'link': '/blog/',
           'date': '22.07.2022',
       },
       {
@@ -21,7 +21,7 @@ export default defineEventHandler(() => {
               '1-2': '/upload/blog-2.jpeg',
               '1-1': '/upload/blog-2.jpeg',
           },
-          'link': '/blog/Low-code-No-code-evolyutsiya-biznes-analitiki/',
+          'link': '/blog/',
           'date': '22.07.2022',
       },
       {
@@ -33,7 +33,7 @@ export default defineEventHandler(() => {
               '1-2': '/upload/blog-3.jpeg',
               '1-1': '/upload/blog-3.jpeg',
           },
-          'link': '/blog/Low-code-No-code-evolyutsiya-biznes-analitiki/',
+          'link': '/blog/',
           'date': '22.07.2022',
       },
       {
@@ -45,7 +45,7 @@ export default defineEventHandler(() => {
               '1-2': '/upload/blog-4.jpeg',
               '1-1': '/upload/blog-4.jpeg',
           },
-          'link': '/blog/Low-code-No-code-evolyutsiya-biznes-analitiki/',
+          'link': '/blog/',
           'date': '04.07.2022',
       },
       {
@@ -57,7 +57,7 @@ export default defineEventHandler(() => {
               '1-2': '/upload/blog-5.jpeg',
               '1-1': '/upload/blog-5.jpeg',
           },
-          'link': '/about/news/Korporativnoe-obuchenie-vozvrashchaetsya-v-ochnyy-format/',
+          'link': '/about/',
           'date': '01.07.2022',
       },
   ]

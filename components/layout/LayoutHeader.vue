@@ -1,6 +1,8 @@
 <script>
+import SvgIcon from "~/components/SvgIcon";
 export default {
   name: 'Header',
+  components: {SvgIcon},
   data: () => ({
     navigation: [
       { link: '/catalog/', text: 'Каталог' },
@@ -16,9 +18,9 @@ export default {
 <template>
   <div class="header">
     <div class="header__box header__box_main">
-      <NuxtLink to="/" class="header__logo">
-        <img class="header__logo-image" src="~/assets/images/components/header/logo.svg" alt="IBS Training Center">
-      </NuxtLink>
+      <nuxt-link to="/" class="header__logo" aria-label="IBS Training Center">
+        <nuxt-img class="header__logo-image" src="/images/logo.svg" alt="IBS Training Center" width="268" height="62" />
+      </nuxt-link>
       <div class="header__main">
         <div class="header__navigation">
           <LayoutNavigation :items="navigation" />
@@ -27,7 +29,7 @@ export default {
           <div class="header__control header__control_search">
             <SvgIcon id="header-search" />
           </div>
-          <a href="/contacts/" class="header__control header__control_contact">
+          <a href="/contacts/" class="header__control header__control_contact" aria-label="Контакты">
             <SvgIcon id="header-contact" />
           </a>
           <div class="header__control header__control_nav">

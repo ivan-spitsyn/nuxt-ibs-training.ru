@@ -2,6 +2,7 @@
   <NuxtLayout>
     <Head>
       <Title>{{route.meta.title}}</Title>
+      <Meta name="description" :content="route.meta.description" />
     </Head>
     <NuxtPage />
   </NuxtLayout>

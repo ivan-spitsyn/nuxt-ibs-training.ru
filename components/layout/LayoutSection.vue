@@ -38,6 +38,7 @@ export default {
   background-repeat: no-repeat;
   &__container {
     width: 100%;
+    max-width: 1730px;
     margin: 0 auto;
     //TODO переписать под стандартные mq
     @media (max-width: 1729px) {
@@ -147,8 +148,6 @@ export default {
 .section-box._subscribe {
   background-image: url("/local/assets/css/../images/background_section-subscribe.jpg");
 }
-
-.section-box._subscribe {}
 
 .section-box._callback-contacts {
   background: #e3e3e3;
