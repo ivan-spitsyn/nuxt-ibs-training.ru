@@ -66,7 +66,7 @@ export default {
     color: $color-brand-blue;
     b { font-weight: 600; }
    &._white {
-     color: #fff;
+     color: $color-text-light;
    }
   }
   &__subtitle {
@@ -77,79 +77,64 @@ export default {
     color: #444444;
     line-height: 1.4;
     &._white {
-      color: #fff;
+      color: $color-text-light;
     }
   }
-}
-
-.section-box__content._hidden {
-  display: none;
-}
-
-.section-box__inner {
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  max-width: 1570px;
-}
-
-.section-box__footer {
-
-}
-
-.section-box__footer._button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0 0;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.section-box {
-  &_footer-description {
-    background:#ffffff url('~/assets/images/components/section/dark-2.png') bottom repeat-x;
+  &__content {
+    &._hidden {
+      display: none;
+    }
+  }
+  &__inner {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1570px;
+  }
+  &__footer {
+    &._button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
   }
   &_socials-and-questions {
     padding-top: 80px;
     padding-bottom: 80px;
     background: #eee;
   }
-}
+  &._slider {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  &._groups-courses {
 
-.section-box._slider {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.section-box._groups-courses {
-
-}
-
-.section-box._categories-course {
-  background-image: url("/local/assets/css/../images/background_section-course-categories.jpg");
-}
-
-.section-box._solutions {
-}
-
-.section-box._callback-mini-background {
-  background-image: url("/local/assets/css/../images/background_section-callback-mini.jpg");
-}
-
-.section-box._certificate-group {
-  background: #eee;
-}
-
-.section-box._news {
-  background-color: #ffffff;
-}
-
-.section-box._subscribe {
-  background-image: url("/local/assets/css/../images/background_section-subscribe.jpg");
-}
-
-.section-box._callback-contacts {
-  background: #e3e3e3;
+  }
+  &._certificate-group {
+    background: #eee;
+  }
+  &._news {
+    background-color: #ffffff;
+  }
+  &._solutions {
+  }
+  &._callback-contacts {
+    background: #e3e3e3;
+  }
+  &._subscribe {
+    background-image: url("@/assets/images/components/section/subscribe.jpg");
+  }
+  &._categories-course {
+    background-image: url("@/assets/images/components/section/course-categories.jpg");
+  }
+  &._callback-mini-background {
+    background-image: url("@/assets/images/components/section/callback-mini.jpg");
+  }
+  &_footer-description {
+    background:#ffffff url('@/assets/images/components/section/dark-2.png') bottom repeat-x;
+  }
 }
 </style>
