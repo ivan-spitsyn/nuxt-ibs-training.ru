@@ -1,6 +1,6 @@
 <script setup>
 import Section from '~/components/layout/LayoutSection.vue';
-import Breadcrumbs from '~/components/layout/Breadcrumbs.vue';
+import Breadcrumbs from '~/components/layout/LayoutBreadcrumbs.vue';
 
 const route = useRoute();
 const breadcrumbs = ref(getBreadcrumbsFromMatched(route.matched));

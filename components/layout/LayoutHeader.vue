@@ -1,25 +1,15 @@
-<script>
+<script setup>
 import SvgIcon from "~/components/SvgIcon";
-export default {
-  name: 'Header',
-  components: {SvgIcon},
-  data: () => ({
-    navigation: [
-      { link: '/catalog/', text: 'Каталог' },
-      { link: '/schedule/', text: 'Расписание' },
-      { link: '/corporate/', text: 'Корпоративное обучение' },
-      { link: '/testing/', text: 'Оценка персонала' },
-      { link: '/consulting/', text: 'Консалтинг' },
-      { link: '/it-guru/', text: 'IT-гуру' },
-    ],
-  })
-}
+
+const {data: navigation} = useAsyncData(() => $fetch('/api/menu/header'))
+const {data: searchList} = useAsyncData(() => $fetch('/api/search/headerPhrase'))
+
 </script>
 <template>
   <div class="header">
     <div class="header__box header__box_main">
       <nuxt-link to="/" class="header__logo" aria-label="IBS Training Center">
-        <nuxt-img class="header__logo-image" src="/images/logo.svg" alt="IBS Training Center" width="268" height="62" />
+        <img class="header__logo-image" src="/images/logo.svg" alt="IBS Training Center">
       </nuxt-link>
       <div class="header__main">
         <div class="header__navigation">
@@ -38,7 +28,11 @@ export default {
         </div>
       </div>
     </div>
-    <div class="header__box header__box_search"></div>
+    <div class="header__box _search">
+    </div>
+    <div class="header__box header__box_search">
+      <layout-header-search :items="searchList" />
+    </div>
   </div>
 </template>
 <style lang="scss">
@@ -59,6 +53,14 @@ export default {
     align-items: center;
     &_main {
       height: 100px;
+    }
+    &_search {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      background: #e3e3e3;
     }
   }
 

@@ -7,7 +7,7 @@
      :href="$props.href" :class="cssClass" target="_blank">
     <span><slot /></span>
   </a>
-  <div v-else :class="this.class">
+  <div v-else :class="cssClass">
     <span><slot /></span>
   </div>
 </template>
@@ -26,7 +26,10 @@ export default {
 </script>
 <style lang="scss">
 .button {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
   position: relative;
   height: 40px;
   padding: 0 23px;

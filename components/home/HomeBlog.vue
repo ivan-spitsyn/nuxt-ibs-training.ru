@@ -1,5 +1,6 @@
 <script>
 import SvgIcon from "~/components/SvgIcon";
+
 export default {
   components: {SvgIcon},
   props: {
@@ -21,11 +22,11 @@ export default {
       <template v-for="(item, index) in items" :key="item.id">
         <div :class="getItemClassByIndex(index)">
           <div class="news-cards__item-view">
-            <nuxt-img format="webp"
-                      :class="getImageClassByIndex(index)"
-                      :src="item.images[getImageTypeByIndex(index)]"
-                      :alt="item.title"
-            />
+            <nuxt-img
+                format="webp"
+                :class="getImageClassByIndex(index)"
+                :src="item.images[getImageTypeByIndex(index)]"
+                :alt="item.title" />
           </div>
           <div class="news-cards__item-info">
             <NuxtLink :to="item.link" class="news-cards__item-link" :aria-label="item.title"></NuxtLink>
@@ -51,7 +52,6 @@ export default {
   </div>
 </template>
 <style lang="scss">
-
 .news-cards {
 }
 

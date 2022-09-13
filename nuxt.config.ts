@@ -12,7 +12,13 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/image-edge',
     ],
-    css: ["@/assets/styles/main.scss"],
+    css: [
+        'vuetify/lib/styles/main.sass',
+        "@/assets/styles/main.scss"
+    ],
+    build: {
+        transpile: ['vuetify'],
+    },
     vite: {
         css: {
             preprocessorOptions: {

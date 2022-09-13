@@ -15,10 +15,11 @@ export default {
 }
 </script>
 <template>
-  <section :class="cssClass">
+  <section :class="cssClass" >
     <div class="section-box__container">
       <div v-if="$slots.header || $slots.title" class="section-box__header">
-        <div class="section-box__title"><slot name="title"/></div>
+        <div v-if="$slots.title" class="section-box__title"><slot name="title"/></div>
+        <div v-if="$slots.subTitle" class="section-box__subtitle"><slot name="subTitle"/></div>
         <slot name="header" />
       </div>
       <div v-if="$slots.default" class="section-box__content">
@@ -41,17 +42,25 @@ export default {
     max-width: 1730px;
     margin: 0 auto;
     //TODO переписать под стандартные mq
-    @media (max-width: 1729px) {
-      max-width: 1430px
+    @media (max-width: $media-laptop) {
+      max-width: 1430px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
-    @media (max-width: 1439px) {
-      max-width: 1260px
+    @media (max-width: $media-tablet-large) {
+      max-width: 1260px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
-    @media (max-width: 767px) {
-      max-width: 720px
+    @media (max-width: $media-tablet) {
+      max-width: 720px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
-    @media (max-width: 576px) {
-      max-width: 540px
+    @media (max-width: $media-mobile) {
+      max-width: 540px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
   &__header {
@@ -92,7 +101,7 @@ export default {
     max-width: 1570px;
   }
   &__footer {
-    &._button {
+    &_button {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -106,31 +115,31 @@ export default {
     padding-bottom: 80px;
     background: #eee;
   }
-  &._slider {
+  &_slider {
     padding-top: 0;
     padding-bottom: 0;
   }
-  &._groups-courses {
+  &_groups-courses {
 
   }
-  &._certificate-group {
+  &_certificate-group {
     background: #eee;
   }
-  &._news {
+  &_news {
     background-color: #ffffff;
   }
-  &._solutions {
+  &_solutions {
   }
-  &._callback-contacts {
+  &_callback-contacts {
     background: #e3e3e3;
   }
-  &._subscribe {
+  &_subscribe {
     background-image: url("@/assets/images/components/section/subscribe.jpg");
   }
-  &._categories-course {
+  &_categories-course {
     background-image: url("@/assets/images/components/section/course-categories.jpg");
   }
-  &._callback-mini-background {
+  &_callback-mini-background {
     background-image: url("@/assets/images/components/section/callback-mini.jpg");
   }
   &_footer-description {

@@ -1,9 +1,8 @@
 //MEDIA_QUERY
-$media-mobile: 320px;
-$media-tablet: 768px;
-$media-tablet-h: 1024px;
-$media-laptop: 1280px;
-$media-desktop: 1920px;
+$media-mobile: 767px;
+$media-tablet: 991px;
+$media-tablet-large: 1199px;
+$media-laptop: 1728px;
 
 //COLORS
 $color-brand-grey: #424A52;
@@ -19,7 +18,7 @@ $color-border: #eeeeee;
 //TEXT
 @mixin textScale( $args... ) {
   $counter: 1;
-  $breakpoints: $media-tablet, $media-tablet-h, $media-laptop, $media-desktop;
+  $breakpoints: $media-laptop, $media-tablet-large, $media-tablet, $media-mobile;
 
   @while($counter <= length($args)) {
     $arg: nth($args, $counter);
@@ -31,7 +30,7 @@ $color-border: #eeeeee;
       font-size: #{$fontSize}px;
       line-height: #{$lineHeight}px;
     } @else {
-      @media (min-width: nth($breakpoints, $counter - 1)) {
+      @media (max-width: nth($breakpoints, $counter - 1)) {
         font-size: #{$fontSize}px;
         line-height: #{$lineHeight}px;
       }
@@ -40,15 +39,14 @@ $color-border: #eeeeee;
     $counter: $counter + 1;
   }
 }
-%text-title {@include textScale('20/30', '24/36', '26/40', '30/46', '32/48')}
+%text-title {@include textScale('32/48', '30/46', '26/40', '24/36', '20/30')}
 %text-nav   {@include textScale('14/22', '14/22', '14/22', '14/22', '14/22')}
 %text-ps    {@include textScale('12/14', '12/14', '12/14', '12/14', '12/14')}
-
-%text-h1    {@include textScale('20/30', '24/36', '26/40', '30/46', '32/48')}
-%text-h2    {@include textScale('18/28', '22/34', '24/36', '26/40', '28/42')}
-%text-h3    {@include textScale('18/28', '22/34', '22/34', '22/34', '24/36')}
-%text-h4    {@include textScale('16/24', '18/28', '18/28', '18/28', '20/30')}
-%text-p1    {@include textScale('16/24', '16/24', '18/28', '18/28', '18/28')}
-%text-p2    {@include textScale('14/22', '14/22', '16/24', '16/24', '16/24')}
+%text-h1    {@include textScale('32/48', '30/46', '26/40', '24/36', '20/30')}
+%text-h2    {@include textScale('28/42', '26/40', '24/36', '22/34', '18/28')}
+%text-h3    {@include textScale('24/36', '22/34', '22/34', '22/34', '18/28')}
+%text-h4    {@include textScale('20/30', '18/28', '18/28', '18/28', '16/24')}
+%text-p1    {@include textScale('18/28', '18/28', '18/28', '16/24', '16/24')}
+%text-p2    {@include textScale('16/24', '16/24', '16/24', '14/22', '14/22')}
 %text-p3    {@include textScale('14/22', '14/22', '14/22', '14/22', '14/22')}
 %text-p4    {@include textScale('12/18', '12/18', '12/18', '12/18', '12/18')}

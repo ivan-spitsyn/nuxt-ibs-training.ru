@@ -99,6 +99,17 @@ const year = (new Date).getFullYear()
     @extend %text-ps;
     color: #c9deef;
   }
+  @media (max-width: $media-tablet) {
+    .footer__row {
+      flex-direction: column;
+    }
+    .footer__col {
+      margin-left: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border: none;
+    }
+  }
 }
 .footer-company-info {
   &__name {
@@ -112,6 +123,7 @@ const year = (new Date).getFullYear()
     margin-bottom: 5px;
 
     @extend %text-p2;
+    font-weight: 600;
     text-decoration: none;
     color: $color-brand-turquoise;
   }
