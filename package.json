@@ -9,7 +9,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27707824.1028381",
+    "@nuxt/image-edge": "^1.0.0-27718143.a3cd82c",
     "@originjs/vite-plugin-global-style": "^1.0.2",
     "crypto-js": "^4.1.1",
     "nuxt": "^3.0.0-rc.9",

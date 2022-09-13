@@ -29,7 +29,7 @@ export default {
 <template>
   <swiper class="homeSlider" :loop="true" :modules="modules" :lazy="true">
     <swiper-slide class="homeSlider__slider" v-for="slider in items" :key="`sldier-${slider.id}`">
-      <a :href="slider.link" class="homeSlider__link" target="_blank">
+      <a :href="slider.url" class="homeSlider__link" target="_blank">
         <div class="homeSlider__image-wrap" v-if="slider.type == 'image'">
           <img
               class="homeSlider__image swiper-lazy"

@@ -29,7 +29,7 @@ export default {
                 :alt="item.title" />
           </div>
           <div class="news-cards__item-info">
-            <NuxtLink :to="item.link" class="news-cards__item-link" :aria-label="item.title"></NuxtLink>
+            <NuxtLink :to="item.url" class="news-cards__item-link" :aria-label="item.title"></NuxtLink>
             <div class="news-cards__item-title">{{ item.title }}</div>
             <div class="news-cards__item-description">{{ item.description }}</div>
             <div class="news-cards__item-read-more">
