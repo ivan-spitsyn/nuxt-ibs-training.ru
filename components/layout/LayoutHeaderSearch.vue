@@ -8,65 +8,44 @@ const props = defineProps({
 })
 </script>
 <template>
-  <div class="search container">
-    <div class="search__form">
-      <form action="/search/">
-        <input class="search-main"
-               type="text"
-               autocomplete="off"
-               placeholder="Какое обучение вы ищете?"
-        >
-        <input type="submit" value="" name="submit">
-      </form>
-      <div id="search-dropdown"></div>
-    </div>
-    <div class="search-phrase">
-      <ul class="search-phrase__list">
-        <li v-for="item in props.items" class="search-phrase__item">
-          <a :href="item.url" class="search-phrase__link">{{item.text}}</a>
-        </li>
-      </ul>
-    </div>
+  <div class="search">
+    <v-container fluid>
+      <v-row class="align-center">
+        <v-col cols="3">
+          <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Какое обучение вы ищете?"
+            single-line
+            outlined
+            hide-details
+          ></v-text-field>
+        </v-col>
+        <v-col cols="9">
+          <div class="search-phrase">
+            <ul class="search-phrase__list">
+              <li v-for="item in props.items" class="search-phrase__item" :key="item.id">
+                <a :href="item.url" class="search-phrase__link">{{item.text}}</a>
+              </li>
+            </ul>
+          </div>
+        </v-col>
+      <!-- <form action="/search/">
+        <v-text-field
+            v-model="message4"
+            label="Outlined"
+            outlined
+            clearable
+            placeholder="Какое обучение вы ищете?"
+          ></v-text-field>
+
+      </form> -->
+    
+      </v-row>
+    </v-container>
   </div>
 </template>
 <style scoped lang="scss">
-.search {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100px;
-  &__form {
-    form {
-      background: #fff;
-      overflow: hidden;
-      border-radius: 4px;
-      border: 1px solid #eee;
-      width: 530px;
-      display: flex;
-      align-items: stretch;
-      justify-content: flex-start;
-    }
-    .search-main {
-      height: 40px;
-      line-height: 40px;
-      margin: 0;
-      padding: 0 10px;
-      border: none;
-      outline: transparent;
-      box-sizing: border-box;
-      width: 100%;
-    }
-
-    input[name=submit] {
-      display: block;
-      border: none;
-      outline: transparent;
-      width: 80px;
-      /*background: url("/local/assets/css/../images/icons/search_form.svg") center / auto 60% no-repeat;*/
-      cursor: pointer;
-    }
-  }
-}
 
 .search-phrase {
   margin-left: 80px;

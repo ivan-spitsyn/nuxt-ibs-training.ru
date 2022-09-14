@@ -36,7 +36,6 @@ export default {
               :data-src="slider.image"
               :alt="slider.alt"
           >
-          <div class="swiper-lazy-preloader " ></div>
         </div>
         <div class="homeSlider__video-wrap" v-else>
           <video class="homeSlider__video"  :poster="slider.poster" loop="" autoplay="" muted=""  >
@@ -74,7 +73,6 @@ export default {
     height: 100%;
     object-fit: cover;
     &-wrap {
-      opacity: 0;
       transition: opacity .25s;
       height: 100%;
     }
@@ -102,8 +100,4 @@ export default {
   }
 }
 
-// todo delete after add loading data block
-.swiper-slide-active .homeSlider__video-wrap {
-  opacity: 1;
-}
 </style>
