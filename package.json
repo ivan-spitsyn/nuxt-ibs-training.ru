@@ -9,15 +9,15 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27718143.a3cd82c",
+    "@nuxt/image-edge": "^1.0.0-27719579.87dcdf2",
     "@originjs/vite-plugin-global-style": "^1.0.2",
     "crypto-js": "^4.1.1",
-    "nuxt": "^3.0.0-rc.9",
-    "sass": "^1.54.9",
-    "sass-loader": "^13.0.2"
+    "nuxt": "^3.0.0-rc.11",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0"
   },
   "dependencies": {
-    "swiper": "^8.3.2",
-    "vuetify": "^3.0.0-beta.10"
+    "swiper": "^8.4.3",
+    "vuetify": "^3.0.0-beta.13"
   }
 }

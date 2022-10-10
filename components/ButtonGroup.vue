@@ -13,7 +13,7 @@
   justify-content: flex-start;
   &__label {
     padding: 0 15px;
-    @export text-p1;
+    @extend %text-p1;
   }
 }
 </style>

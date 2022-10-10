@@ -94,7 +94,6 @@ const year = (new Date).getFullYear()
       border: none;
     }
   }
-
   &__copyright {
     @extend %text-ps;
     color: #c9deef;
