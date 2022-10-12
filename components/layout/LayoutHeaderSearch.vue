@@ -4,7 +4,7 @@ const props = defineProps({
     type: Array,
     required: true,
     default: () => []
-  },
+  }
 })
 </script>
 <template>

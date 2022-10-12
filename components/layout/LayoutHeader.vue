@@ -1,13 +1,32 @@
 <script setup>
 import SvgIcon from "~/components/SvgIcon";
-
+import { ref, onMounted, reactive  } from 'vue'
 const {data: navigation} = useAsyncData(() => $fetch('/api/menu/header'))
 const {data: searchList} = useAsyncData(() => $fetch('/api/search/headerPhrase'))
 
+
+const state = reactive({
+  previousPosition: 0,
+  headerVisible: false,
+})
+
+const onScroll  = () => {
+  const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (state.previousPosition > currentPosition ) {
+      state.headerVisible = false;
+    } else {
+      state.headerVisible = true;
+  }
+  state.previousPosition = currentPosition
+}
+onMounted(() => {
+   window.addEventListener('scroll', onScroll );
+})
 </script>
 <template>
-  <div class="header px-4">
-    <div class="header__box header__box_main">
+  <div class="header">
+    <div class="header__box header__box_main  px-4">
       <nuxt-link to="/" class="header__logo" aria-label="IBS Training Center">
         <img class="header__logo-image" src="/images/logo.svg" alt="IBS Training Center">
       </nuxt-link>
@@ -28,9 +47,9 @@ const {data: searchList} = useAsyncData(() => $fetch('/api/search/headerPhrase')
         </div>
       </div>
     </div>
-    <div class="header__box _search">
+    <div class="header__box _search  px-4">
     </div>
-    <div class="header__box header__box_search" >
+    <div class="header__box header__box_search" :class="{'hide' : state.headerVisible}">
       <LayoutHeaderSearch :items="searchList" />
     </div>
   </div>
@@ -46,12 +65,15 @@ const {data: searchList} = useAsyncData(() => $fetch('/api/search/headerPhrase')
   z-index: 999;
 
 
-  &__box {
+  &__box {  
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     &_main {
+      position: relative;
+      background: #fff;
       height: 100px;
+      z-index: 1;
     }
     &_search {
       display: block;
@@ -60,6 +82,11 @@ const {data: searchList} = useAsyncData(() => $fetch('/api/search/headerPhrase')
       top: 100%;
       left: 0;
       background: #e3e3e3;
+      transition: all 0.3s ease;
+      transform: translateY(0);
+      &.hide {
+        transform: translateY(-100%);
+      }
     }
   }
 
