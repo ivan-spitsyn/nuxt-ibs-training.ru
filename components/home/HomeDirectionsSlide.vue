@@ -76,7 +76,6 @@ const props = defineProps({
     }
   }
 }
-<<<<<<< HEAD
 
 
 
@@ -87,6 +86,3 @@ const props = defineProps({
 }
 
 </style>
-=======
-</style>
->>>>>>> 355572324eac69fddad93fc605d1cf561bb0ab5e
