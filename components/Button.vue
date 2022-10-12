@@ -1,12 +1,8 @@
 <template>
-  <NuxtLink v-if="$props.href && $props.href.indexOf('http')"
+  <NuxtLink v-if="$props.href"
             :to="$props.href" :class="cssClass">
     <span><slot /></span>
   </NuxtLink>
-  <a v-else-if="$props.href && !$props.href.indexOf('http')"
-     :href="$props.href" :class="cssClass" target="_blank">
-    <span><slot /></span>
-  </a>
   <div v-else :class="cssClass">
     <span><slot /></span>
   </div>
