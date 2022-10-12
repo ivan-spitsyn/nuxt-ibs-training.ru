@@ -31,7 +31,7 @@ const {data: searchList} = useAsyncData(() => $fetch('/api/search/headerPhrase')
     <div class="header__box _search">
     </div>
     <div class="header__box header__box_search">
-      <layout-header-search :items="searchList" />
+      <LayoutHeaderSearch :items="searchList" />
     </div>
   </div>
 </template>

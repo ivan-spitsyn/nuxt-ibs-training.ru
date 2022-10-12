@@ -13,7 +13,6 @@ const props = defineProps({
       <v-row class="align-center">
         <v-col cols="3">
           <v-text-field
-            v-model="search"
             append-icon="mdi-magnify"
             label="Какое обучение вы ищете?"
             single-line

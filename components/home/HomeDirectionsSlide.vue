@@ -20,9 +20,7 @@ const props = defineProps({
       <a :href="item.url" class="directionsSlide__link">{{ item.text }}</a>
     </li>
   </ul>
-  <Button class="directionsSlide__button" href="/">
-    <span>Узнать больше</span>
-  </Button>
+  <Button class="directionsSlide__button  _white" href="/">Узнать больше</Button>
 </div>
 </template>
 <style lang="scss">
@@ -33,7 +31,7 @@ const props = defineProps({
   justify-content: space-between;
   position: relative;
   width: 100%;
-  max-width: 25%;
+  max-width: 100%;
   margin: 0 auto;
   color: #fff;
   text-align: center;
@@ -51,6 +49,7 @@ const props = defineProps({
     align-items: center;
     margin-top: 0;
     margin-bottom: auto;
+    list-style-type: none;
   }
   &__link-box {
     line-height: 1.6;
@@ -58,20 +57,24 @@ const props = defineProps({
     text-decoration: none;
   }
   &__link {
+    color: #ffffff;
+    text-decoration: none;
+    outline: transparent;
+  }
+  &__button {
     display: block;
     margin-top: 42px;
     margin-bottom: 0;
     visibility: hidden;
-    opacity: 0;
     outline: transparent;
+    opacity: 0;
   }
-}
-
-
-
-.categories-course:hover .categories-course__link {
-  visibility: visible;
-  opacity: 1;
-  transition: all 0.3s ease;
+  &:hover {
+    .directionsSlide__button {
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.3s ease;
+    }
+  }
 }
 </style>
