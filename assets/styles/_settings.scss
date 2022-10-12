@@ -1,8 +1,20 @@
 @use 'vuetify' with (
-  $utilities: false,
   $color-pack: false,
+  $body-font-family: 'OpenSansLocal',
+  $font-size-root: 1rem,
   $container-max-widths: (
-    'lg': 748px,
-    'xl': 1440px
-    )
+    'xs': 0,
+    'sm': 600px,
+    'md': 960px,
+    'lg': 960px,
+    'xl': 960px,
+    'xxl': 960px,
+  )
 );
+// TODO: Add your own settings here
+.v-container {
+  max-width: 1730px !important;
+}
+.v-container--fluid {
+  max-width: 100% !important;
+}

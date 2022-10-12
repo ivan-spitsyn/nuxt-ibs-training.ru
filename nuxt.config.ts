@@ -13,15 +13,13 @@ export default defineNuxtConfig({
         '@nuxt/image-edge',
     ],
     css: [
-        'vuetify/lib/styles/main.sass',
         "@/assets/styles/main.scss"
     ],
     build: {
         transpile: ['vuetify'],
     },
     vuetify: {
-        customVariables: ['~/assets/styles/variables.scss'],
-        styles: { configFile: '~/assets/styles/settings.scss' },
+        customVariables: ['@/assets/styles/_settings.scss'],
         treeShake: true
     },
     vite: {

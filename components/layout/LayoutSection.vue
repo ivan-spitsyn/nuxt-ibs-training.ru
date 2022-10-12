@@ -29,7 +29,7 @@ export default {
   <component :is="$props.image ? 'v-parallax' : 'div'" :src="imageSrc" :class="cssClass" >
     <v-container>
       <div v-if="$slots.header || $slots.title" class="section-box__header">
-        <div v-if="$slots.title" class="section-box__title text-h2 my-10"><slot name="title"/></div>
+        <h2 v-if="$slots.title" class="section-box__title text-h2 my-10"><slot name="title"/></h2>
         <div v-if="$slots.subTitle" class="section-box__subtitle"><slot name="subTitle"/></div>
         <slot name="header" />
       </div>

@@ -51,7 +51,7 @@ export default {
 </template>
 <style lang="scss" scoped >
 .homeSlider {
-  height: calc(85vh - 100px);
+  height: calc(85vh - 188px);
   max-height: 800px;
   background: #fafafa;
 

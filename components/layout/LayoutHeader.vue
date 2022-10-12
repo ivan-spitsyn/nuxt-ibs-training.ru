@@ -6,7 +6,7 @@ const {data: searchList} = useAsyncData(() => $fetch('/api/search/headerPhrase')
 
 </script>
 <template>
-  <div class="header">
+  <div class="header px-4">
     <div class="header__box header__box_main">
       <nuxt-link to="/" class="header__logo" aria-label="IBS Training Center">
         <img class="header__logo-image" src="/images/logo.svg" alt="IBS Training Center">
@@ -30,7 +30,7 @@ const {data: searchList} = useAsyncData(() => $fetch('/api/search/headerPhrase')
     </div>
     <div class="header__box _search">
     </div>
-    <div class="header__box header__box_search">
+    <div class="header__box header__box_search" >
       <LayoutHeaderSearch :items="searchList" />
     </div>
   </div>
@@ -41,7 +41,6 @@ const {data: searchList} = useAsyncData(() => $fetch('/api/search/headerPhrase')
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 48px;
   background: #fff;
   border-bottom: 1px solid #e3e3e3;
   z-index: 999;

@@ -37,7 +37,7 @@ const {data: blogItems} = useAsyncData(() => $fetch('/api/home/blog'))
     <layout-section light>
       <template #title>Наши <b>сервисы и продукты</b></template>
       <template #subTitle>
-        <layout-page-content>
+        <layout-page-content >
           <p>Хотите, чтобы IT-проект был разработан в срок, а продукт успешно вышел на рынок? Это достигается во многом
             благодаря высоким профессиональным качествам IT-команды и правильно выстроенным бизнес-процессам.</p>
           <p>IBS Training Center поможет вам в короткие сроки оценить профессиональные навыки всей команды IT-разработки

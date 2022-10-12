@@ -13,7 +13,7 @@ export default {
   --swiper-theme-color: #184188
 }
 .page {
-  padding-top: 100px;
+  padding-top: 188px;
   overflow: hidden;
 }
 
