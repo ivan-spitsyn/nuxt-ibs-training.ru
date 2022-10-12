@@ -27,10 +27,10 @@ const props = defineProps({
 <template>
   <div class="servicesSlide">
     <div class="servicesSlide__view">
-      <nuxt-img
-          class="servicesSlide__image"
-          format="webp"
-          :src="props.image"
+      <img
+          class="servicesSlide__image swiper-lazy"
+          :data-src="props.image"
+          v-if="props.image"
           :alt="props.alt"
       />
     </div>
@@ -50,9 +50,13 @@ const props = defineProps({
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  transform: scale(1);
-  transition: all 0.4s ease;
+  transform: translateY(0);
   margin: 0 auto;
+  background: #fafafa;
+  cursor: pointer;
+  // transition: transform .25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.25s ease-in-out;
+
   &:before {
     content: '';
     background-color: #000000;
@@ -63,11 +67,14 @@ const props = defineProps({
     width: 100%;
     height: 100%;
     z-index: 1;
-    transition: all 0.4s ease;
+    transition: all 0.25s ease-in;
+    
+    
+
   }
 
   &:hover {
-    transform: scale(1.1);
+    transform: translateY(-25px);
     &:before {
       opacity: 0.6;
     }

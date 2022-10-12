@@ -4,9 +4,9 @@ export default {
 }
 </script>
 <template>
-  <div id="site" class="site">
+  <v-app id="site" class="site">
     <slot />
-  </div>
+  </v-app>
 </template>
 <style lang="scss">
 /* open-sans-300 - latin-ext_latin_cyrillic-ext_cyrillic */

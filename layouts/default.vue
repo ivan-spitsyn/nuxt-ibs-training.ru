@@ -6,6 +6,7 @@
     <LayoutPage>
       <LayoutTopBar />
       <slot />
+
     </LayoutPage>
     <LayoutFooter />
   </LayoutSite>

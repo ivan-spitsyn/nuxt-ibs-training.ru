@@ -13,7 +13,7 @@ const props = defineProps({
   },
 });
 
-const modules = [Navigation]
+const modules = [Navigation,Lazy]
 </script>
 <template>
   <swiper class="servicesSlider"
@@ -21,6 +21,7 @@ const modules = [Navigation]
           :loop="true"
           :autoplay="true"
           :navigation="true"
+          :lazy="true"
           :speed="1000"
           :slides-per-view="4"
           :slides-per-group="4"
@@ -42,7 +43,6 @@ const modules = [Navigation]
 <style lang="scss">
 .servicesSlider {
   padding: 30px!important;
-  &__slide {}
   .swiper-button-prev {
     left: -2px;
   }
@@ -50,4 +50,5 @@ const modules = [Navigation]
     right: -2px;
   }
 }
+
 </style>

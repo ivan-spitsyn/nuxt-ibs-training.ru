@@ -19,6 +19,11 @@ export default defineNuxtConfig({
     build: {
         transpile: ['vuetify'],
     },
+    vuetify: {
+        customVariables: ['~/assets/styles/variables.scss'],
+        styles: { configFile: '~/assets/styles/settings.scss' },
+        treeShake: true
+    },
     vite: {
         css: {
             preprocessorOptions: {

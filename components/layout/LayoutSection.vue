@@ -5,20 +5,31 @@ export default {
     modifier: {
       type: String,
       default: ''
-    }
+    },
+    image: {
+      type: String,
+      default: ''
+    },
+    light: {
+      type: Boolean,
+      default: false
+    },
   },
   computed: {
     cssClass() {
-      return 'section-box' + (this.$props.modifier ? ' section-box_' + this.$props.modifier : '')
+      return 'section-box' + (this.$props.light ? ' section-box_light' : '')
     },
+    image() {
+      return this.$props.image ? `/assets/images/components/section/${this.$props.image}.jpg` : null
+    }
   }
 }
 </script>
 <template>
-  <section :class="cssClass" >
-    <div class="section-box__container">
+  <component :is="$props.image ? 'v-parallax' : 'div'" :src="image" :class="cssClass" >
+    <v-container>
       <div v-if="$slots.header || $slots.title" class="section-box__header">
-        <div v-if="$slots.title" class="section-box__title"><slot name="title"/></div>
+        <div v-if="$slots.title" class="section-box__title text-h2 my-10"><slot name="title"/></div>
         <div v-if="$slots.subTitle" class="section-box__subtitle"><slot name="subTitle"/></div>
         <slot name="header" />
       </div>
@@ -28,41 +39,41 @@ export default {
       <div v-if="$slots.footer" class="section-box__footer">
         <slot name="footer" />
       </div>
-    </div>
-  </section>
+    </v-container>
+  </component>
 </template>
 <style lang="scss">
 .section-box {
-  padding: 32px 0 48px;
+  padding: 0 0 48px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  &__container {
-    width: 100%;
-    max-width: 1730px;
-    margin: 0 auto;
-    //TODO переписать под стандартные mq
-    @media (max-width: $media-laptop) {
-      max-width: 1430px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    @media (max-width: $media-tablet-large) {
-      max-width: 1260px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    @media (max-width: $media-tablet) {
-      max-width: 720px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    @media (max-width: $media-mobile) {
-      max-width: 540px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
+  // &__container {
+  //   width: 100%;
+  //   max-width: 1730px;
+  //   margin: 0 auto;
+  //   //TODO переписать под стандартные mq
+  //   @media (max-width: $media-laptop) {
+  //     max-width: 1430px;
+  //     padding-left: 10px;
+  //     padding-right: 10px;
+  //   }
+  //   @media (max-width: $media-tablet-large) {
+  //     max-width: 1260px;
+  //     padding-left: 10px;
+  //     padding-right: 10px;
+  //   }
+  //   @media (max-width: $media-tablet) {
+  //     max-width: 720px;
+  //     padding-left: 10px;
+  //     padding-right: 10px;
+  //   }
+  //   @media (max-width: $media-mobile) {
+  //     max-width: 540px;
+  //     padding-left: 10px;
+  //     padding-right: 10px;
+  //   }
+  // }
   &__header {
     text-align: center;
     & + .section-box__content {
@@ -74,7 +85,7 @@ export default {
     font-weight: 200;
     color: $color-brand-blue;
     b { font-weight: 600; }
-   &._white {
+   &._light {
      color: $color-text-light;
    }
   }
@@ -85,7 +96,7 @@ export default {
     font-size: 20px;
     color: #444444;
     line-height: 1.4;
-    &._white {
+    &._light {
       color: $color-text-light;
     }
   }

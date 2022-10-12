@@ -33,7 +33,6 @@ const props = defineProps({
   justify-content: space-between;
   position: relative;
   width: 100%;
-  max-width: 25%;
   margin: 0 auto;
   color: #fff;
   text-align: center;
@@ -74,4 +73,5 @@ const props = defineProps({
   opacity: 1;
   transition: all 0.3s ease;
 }
+
 </style>

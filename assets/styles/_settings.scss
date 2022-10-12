@@ -1,0 +1,8 @@
+@use 'vuetify' with (
+  $utilities: false,
+  $color-pack: false,
+  $container-max-widths: (
+    'lg': 748px,
+    'xl': 1440px
+    )
+);

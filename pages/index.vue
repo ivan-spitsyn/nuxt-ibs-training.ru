@@ -17,6 +17,12 @@ let showModal = false;
 const openModal = () => {
   showModal = true;
 }
+let data = {
+  image_1: 'course-categories',
+  image_2: 'subscribe',
+  image_3: 'callback-mini',
+  image_4: 'dark-2',
+}
 
 //todo возможны ошибки
 const {data: sliderItems} = useAsyncData(() => $fetch('/api/home/slider'))
@@ -28,7 +34,7 @@ const {data: blogItems} = useAsyncData(() => $fetch('/api/home/blog'))
 <template>
   <layout-page-content>
     <HomeSlider :items="sliderItems"/>
-    <layout-section>
+    <layout-section light>
       <template #title>Наши <b>сервисы и продукты</b></template>
       <template #subTitle>
         <layout-page-content>
@@ -44,7 +50,7 @@ const {data: blogItems} = useAsyncData(() => $fetch('/api/home/blog'))
       </template>
       <home-services-slider :items="servicesItems"/>
     </layout-section>
-    <layout-section modifier="categories-course">
+    <layout-section  :image="data.image_1">
       <template #title><b>Направления обучения</b></template>
       <home-directions-slider :items="directionsItems"/>
       <Button><span>Перейти в полный каталог</span></Button>
@@ -59,7 +65,7 @@ const {data: blogItems} = useAsyncData(() => $fetch('/api/home/blog'))
     </layout-section>
 
     <template v-if="false">
-      <layout-section modifier="callback-mini-background">
+      <layout-section :image="data.image_2">
         <template #title>
           <b>Ищете нестандартное решение?</b>
           <br> Наши эксперты помогут!
