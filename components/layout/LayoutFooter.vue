@@ -11,23 +11,23 @@ const year = (new Date).getFullYear()
 </script>
 <template>
   <footer class="footer">
-    <LayoutSection class="footer__description" modifier="footer-description">
+    <layout-section class="footer__description">
       Оценка и обучение ИТ-специалистов по ключевым направлениям разработки программного обеспечения. Курсы от
       экспертов-практиков по языкам программирования, системному и бизнес-анализу, архитектуре ПО, ручному и
       автоматизированному тестированию ПО, Big Data и машинному обучению, управлению проектами и Agile. Действует скидка
       10% на обучение физических
       лиц.
-    </LayoutSection>
-    <LayoutSection class="footer__socials-and-questions" modifier="socials-and-questions">
-      <div class="footer__socials-and-questions">
+    </layout-section>
+    <layout-section class="footer__socials-and-questions">
+      <div class="d-flex align-center justify-space-between">
         <SocialList/>
-        <ButtonGroup>
-          <template #label>Остались вопросы?</template>
-          <Button href="/contacts/" modifier="_b-blue _size-l"><b>Связаться</b> с нами</Button>
-        </ButtonGroup>
+        <div class="d-flex align-center justify-space-between">
+          <p class="pr-4">Остались вопросы?</p>
+          <v-btn variant="outlined" href="/contacts/"><b>Связаться</b> с нами</v-btn>
+        </div>
       </div>
-    </LayoutSection>
-    <LayoutSection>
+    </layout-section>
+    <layout-section>
       <div class="footer__row">
         <div class="footer__col">
           <Navigation class="navigation_footer" :items="navigation" />
@@ -58,7 +58,7 @@ const year = (new Date).getFullYear()
       <div class="footer__row">
         <div class="footer__copyright">© {{year}} IBS, all rights reserved</div>
       </div>
-    </LayoutSection>
+    </layout-section>
   </footer>
 </template>
 <style lang="scss">
@@ -67,10 +67,22 @@ const year = (new Date).getFullYear()
   background: $color-brand-blue;
   z-index: 99;
 
+  &__description {
+    @extend %text-p1;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-x;
+    background-color: #ffffff;
+    background-image: url('@/assets/images/components/section/dark-2.png');
+  }
+
   &__socials-and-questions {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: $color-brand-grey;
   }
 
   &__row {

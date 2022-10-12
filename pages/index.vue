@@ -67,7 +67,11 @@ const {data: blogItems} = useAsyncData(() => $fetch('/api/home/blog'))
       <template #title>Новости - <b>Статьи</b> - Блог</template>
       <home-blog :items="blogItems"/>
     </layout-section>
-
+    <layout-section :image="data.image_2">
+      <template #title>Как не пропустить <b>самое интересное?</b></template>
+      <template #subTitle>Подписывайтесь на наш ежемесячный дайджест!</template>
+      <subscribe-news/>
+    </layout-section>
     <template v-if="false">
       <layout-section :image="data.image_2">
         <template #title>
