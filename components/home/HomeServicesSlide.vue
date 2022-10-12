@@ -38,7 +38,7 @@ const props = defineProps({
       <div class="servicesSlide__title">{{ props.title }}</div>
       <div class="servicesSlide__hide">
         <div class="servicesSlide__description">{{ props.description }}</div>
-        <Button class="servicesSlide__button">Подробнее</Button>
+         <v-btn variant="outlined" class="mt-4">Подробнее</v-btn>
       </div>
     </div>
   </div>
@@ -74,7 +74,6 @@ const props = defineProps({
   }
 
   &:hover {
-    transform: translateY(-25px);
     &:before {
       opacity: 0.6;
     }
@@ -96,6 +95,11 @@ const props = defineProps({
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    &.swiper-lazy-loaded {
+      opacity: 1;
+    }
   }
 
   &__info {
@@ -104,11 +108,10 @@ const props = defineProps({
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
     z-index: 1;
     color: #fff;
   }
@@ -120,7 +123,7 @@ const props = defineProps({
   &__hide {
     height: 0;
     overflow: hidden;
-    transition: 0.5s ease;
+    transition: 0.25s ease;
     opacity: 0;
 
     padding: 0 26px;

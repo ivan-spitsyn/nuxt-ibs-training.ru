@@ -43,11 +43,27 @@ const modules = [Navigation,Lazy]
 <style lang="scss">
 .servicesSlider {
   padding: 30px!important;
+  overflow: visible;
+  .swiper-button-prev, .swiper-button-next {
+    width: 44px;
+    height: 44px;
+    background: #d3d3d370;
+    border-radius: 50%;
+    transition: all .25s ease-in-out;
+    &:hover {
+      background: #d3d3d3;
+    }
+    &::after {
+      font-size: 16px;
+      color: #000;
+      font-weight: bold;
+    }
+  }
   .swiper-button-prev {
-    left: -2px;
+    left: -50px;
   }
   .swiper-button-next {
-    right: -2px;
+    right: -50px;
   }
 }
 

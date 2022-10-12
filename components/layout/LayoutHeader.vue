@@ -82,7 +82,7 @@ onMounted(() => {
       top: 100%;
       left: 0;
       background: #e3e3e3;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
       transform: translateY(0);
       &.hide {
         transform: translateY(-100%);
