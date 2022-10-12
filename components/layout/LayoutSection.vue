@@ -19,14 +19,14 @@ export default {
     cssClass() {
       return 'section-box' + (this.$props.light ? ' section-box_light' : '')
     },
-    image() {
+    imageSrc() {
       return this.$props.image ? `/assets/images/components/section/${this.$props.image}.jpg` : null
     }
   }
 }
 </script>
 <template>
-  <component :is="$props.image ? 'v-parallax' : 'div'" :src="image" :class="cssClass" >
+  <component :is="$props.image ? 'v-parallax' : 'div'" :src="imageSrc" :class="cssClass" >
     <v-container>
       <div v-if="$slots.header || $slots.title" class="section-box__header">
         <div v-if="$slots.title" class="section-box__title text-h2 my-10"><slot name="title"/></div>
