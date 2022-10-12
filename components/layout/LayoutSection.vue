@@ -144,17 +144,17 @@ export default {
   &_callback-contacts {
     background: #e3e3e3;
   }
-  &_subscribe {
-    background-image: url("@/assets/images/components/section/subscribe.jpg");
-  }
-  &_categories-course {
-    background-image: url("@/assets/images/components/section/course-categories.jpg");
-  }
-  &_callback-mini-background {
-    background-image: url("@/assets/images/components/section/callback-mini.jpg");
-  }
-  &_footer-description {
-    background:#ffffff url('@/assets/images/components/section/dark-2.png') bottom repeat-x;
-  }
+  // &_subscribe {
+  //   background-image: url("@/assets/images/components/section/subscribe.jpg");
+  // }
+  // &_categories-course {
+  //   background-image: url("@/assets/images/components/section/course-categories.jpg");
+  // }
+  // &_callback-mini-background {
+  //   background-image: url("@/assets/images/components/section/callback-mini.jpg");
+  // }
+  // &_footer-description {
+  //   background:#ffffff url('@/assets/images/components/section/dark-2.png') bottom repeat-x;
+  // }
 }
 </style>
