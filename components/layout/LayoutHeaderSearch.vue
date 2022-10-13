@@ -13,8 +13,9 @@ const props = defineProps({
       <v-row class="align-center">
         <v-col cols="3">
           <v-text-field
-            append-icon="mdi-magnify"
+            append-inner-icon="mdi-magnify"
             label="Какое обучение вы ищете?"
+            bg-color="#ffffff"
             single-line
             outlined
             hide-details
