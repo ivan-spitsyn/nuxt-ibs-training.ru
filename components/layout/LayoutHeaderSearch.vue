@@ -16,7 +16,6 @@ const props = defineProps({
             append-inner-icon="mdi-magnify"
             label="Какое обучение вы ищете?"
             bg-color="#ffffff"
-            single-line
             outlined
             hide-details
           ></v-text-field>

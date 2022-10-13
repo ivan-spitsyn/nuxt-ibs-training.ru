@@ -29,7 +29,7 @@ const props = defineProps({
     </div>
     <div class="coursesSlide__info mt-5">
       <div class="coursesSlide__title text-h5 text-center">{{props.title}}</div>
-      <div class="coursesSlide__description">{{props.description}}</div>
+      <div class="coursesSlide__description text-center mt-2">{{props.description}}</div>
     </div>
   </div>
 </template>
@@ -39,9 +39,14 @@ const props = defineProps({
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 150px;
   }
   &__title {
-
+    height: 66px;
+    overflow: hidden;
+  }
+  &__description {
+   
   }
 }
 </style>

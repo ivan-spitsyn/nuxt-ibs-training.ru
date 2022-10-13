@@ -13,7 +13,7 @@ const props = defineProps({
 </script>
 <template>
   <swiper
-    class="coursesSlider"
+    class="coursesSlider pt-10"
     :modules="modules"
     :loop="true"
     :autoplay="true"
@@ -21,7 +21,7 @@ const props = defineProps({
     :speed="1000"
     :slides-per-view="4"
     :slides-per-group="4"
-    :space-between="30"
+    :space-between="20"
   >
     <swiper-slide
         class="coursesSlider__slide"
@@ -36,8 +36,9 @@ const props = defineProps({
     </swiper-slide>
   </swiper>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .coursesSlider {
+  overflow: visible;
   &__slide {}
 }
 </style>

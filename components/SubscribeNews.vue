@@ -2,8 +2,8 @@
   <div class="subscribe-news d-flex align-center justify-center">
     <v-text-field class="subscribe-news__field"
                   variant="outlined"
-                  label="E-mail"
-                  single-line="false"
+                  placeholder="E-mail"
+                    hide-details
                   bg-color="#ffffff"
     >
       <template v-slot:append>
