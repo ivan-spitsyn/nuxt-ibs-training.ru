@@ -20,7 +20,8 @@ const props = defineProps({
       <a :href="item.url" class="directionsSlide__link">{{ item.text }}</a>
     </li>
   </ul>
-  <Button class="directionsSlide__button  _white" href="/">Узнать больше</Button>
+  <v-btn variant="outlined" class="mt-4">Узнать больше</v-btn>
+
 </div>
 </template>
 <style lang="scss">

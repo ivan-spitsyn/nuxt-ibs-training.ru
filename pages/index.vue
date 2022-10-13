@@ -34,7 +34,7 @@ const {data: blogItems} = useAsyncData(() => $fetch('/api/home/blog'))
 <template>
   <layout-page-content>
     <HomeSlider :items="sliderItems"/>
-    <layout-section light>
+    <layout-section   >
       <template #title>Наши <b>сервисы и продукты</b></template>
       <template #subTitle>
         <layout-page-content >
@@ -52,7 +52,7 @@ const {data: blogItems} = useAsyncData(() => $fetch('/api/home/blog'))
       </template>
       <home-services-slider :items="servicesItems"/>
     </layout-section>
-    <layout-section  :image="data.image_1">
+    <layout-section  :image="data.image_1" light  >
       <template #title><b>Направления обучения</b></template>
       <home-directions-slider :items="directionsItems"/>
       <template #footer>

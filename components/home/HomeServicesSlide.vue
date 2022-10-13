@@ -56,6 +56,7 @@ const props = defineProps({
   cursor: pointer;
   // transition: transform .25s cubic-bezier(0.34, 1.56, 0.64, 1);
   transition: transform 0.25s ease-in-out;
+  user-select: none;
 
   &:before {
     content: '';

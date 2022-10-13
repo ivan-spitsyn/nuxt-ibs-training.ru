@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     cssClass() {
-      return 'section-box' + (this.$props.light ? ' section-box_light' : '')
+      return 'section-box' + (this.$props.light ? '_light' : '')
     },
     imageSrc() {
       return this.$props.image ? `/assets/images/components/section/${this.$props.image}.jpg` : null
@@ -48,6 +48,11 @@ export default {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  &_light {
+      .section-box__title {
+     color: $color-text-light;
+    }
+   }
   // &__container {
   //   width: 100%;
   //   max-width: 1730px;
@@ -85,9 +90,7 @@ export default {
     font-weight: 200;
     color: $color-brand-blue;
     b { font-weight: 600; }
-   &._light {
-     color: $color-text-light;
-   }
+  
   }
   &__subtitle {
     margin-top: 20px;
@@ -96,9 +99,7 @@ export default {
     font-size: 20px;
     color: #444444;
     line-height: 1.4;
-    &._light {
-      color: $color-text-light;
-    }
+    
   }
   &__content {
     &._hidden {
