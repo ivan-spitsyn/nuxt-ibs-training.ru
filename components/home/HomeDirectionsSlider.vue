@@ -15,8 +15,7 @@ const props = defineProps({
 
 </script>
 <template>
-<div class="directionsSlider">
-  <swiper class="directionsSlider__swiper"
+  <swiper class="directionsSlider"
           :modules="modules"
           :loop="true"
           :autoplay="true"
@@ -36,10 +35,10 @@ const props = defineProps({
       />
     </swiper-slide>
   </swiper>
-</div>
 </template>
 <style lang="scss">
 .directionsSlider {
+  overflow: visible;
   &_slide {
     &:after {
       content: '';

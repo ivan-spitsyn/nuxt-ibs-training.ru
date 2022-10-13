@@ -56,7 +56,9 @@ const {data: blogItems} = useAsyncData(() => $fetch('/api/home/blog'))
       <template #title><b>Направления обучения</b></template>
       <home-directions-slider :items="directionsItems"/>
       <template #footer>
-        <Button class="_b-white _w-full"><span>Перейти в полный каталог</span></Button>
+        <div class="d-flex justify-center">
+          <v-btn color="primary" class="my-10">Перейти в полный каталог</v-btn>
+        </div>
       </template>
     </layout-section>
     <layout-section>

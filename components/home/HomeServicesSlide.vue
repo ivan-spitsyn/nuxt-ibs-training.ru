@@ -38,7 +38,7 @@ const props = defineProps({
       <div class="servicesSlide__title">{{ props.title }}</div>
       <div class="servicesSlide__hide">
         <div class="servicesSlide__description">{{ props.description }}</div>
-         <v-btn variant="outlined" class="mt-4">Подробнее</v-btn>
+         <v-btn variant="outlined" class="mt-auto">Подробнее</v-btn>
       </div>
     </div>
   </div>
@@ -69,8 +69,6 @@ const props = defineProps({
     height: 100%;
     z-index: 1;
     transition: all 0.25s ease-in;
-    
-    
 
   }
 
@@ -97,7 +95,7 @@ const props = defineProps({
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in;
     &.swiper-lazy-loaded {
       opacity: 1;
     }
@@ -184,7 +182,6 @@ const props = defineProps({
       border-top-color: rgba(255, 255, 255, 0.7);
       margin-top: 12px;
       padding-top: 8px;
-      padding-bottom: 8px;
     }
   }
 }
